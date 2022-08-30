@@ -12,5 +12,34 @@
     <p>This is a paragraph inside a Div</p>
   </div>
   <button>Click me!</button>
+
+  <script>
+    //Book Solution:
+
+    // document.getElementsByTagName('button')[0].addEventListener('click', () => {
+    //     const allParagraphs = document.getElementsByTagName('p');
+
+    //     let allContent = "";
+    //     let count = 0;
+    //     for (let i = 0; i < allParagraphs.length; i++) {
+    //       const node = allParagraphs[i];
+    //       count++;
+    //       allContent += `${count} - ${node.textContent}\n`;
+    //     }
+    //     alert(`Found ${count} paragraphs. Their content:\n${allContent}`);
+    //   });
+
+    //My solution:
+    document.getElementsByTagName('button')[0].addEventListener('click', ()=>{
+      const allParagraphs = document.getElementsByTagName('p'); //object
+      
+      let allContent = ""; 
+      Object.keys(allParagraphs).forEach((node, index) => {
+        allContent += `${index+1} - ${allParagraphs[node].textContent}\n`
+      })
+
+      alert(`Found ${allParagraphs.length} paragraphs. Their content:\n${allContent}`);
+    });
+  </script>
 </body>
 </html>
